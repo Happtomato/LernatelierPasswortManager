@@ -114,7 +114,6 @@ public class SQL_Statements {
                 website = rs.getString("Website");
                 String login = rs.getString("Login");
                 String passwort = rs.getString("Passwort");
-
                 String output = website + " " + login + " " + passwort;
                 JOptionPane.showMessageDialog(null,output);
             }
