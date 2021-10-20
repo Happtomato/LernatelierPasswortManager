@@ -72,12 +72,12 @@ public class SQL_Statements {
 
             if(passwortOut.equals(passwort)){
                 conn.close();
-                JOptionPane.showMessageDialog(null,"Erfolgreich eingeloggt");
+                JOptionPane.showMessageDialog(null,"Erfolgreich eingeloggt.");
                 return true;
             }
             else{
                 conn.close();
-                JOptionPane.showMessageDialog(null,"Benutzer nicht gefunden");
+                JOptionPane.showMessageDialog(null,"Benutzer nicht gefunden.");
                 return false;
             }
         }
@@ -120,7 +120,7 @@ public class SQL_Statements {
 
 
             if(website == null){
-                JOptionPane.showMessageDialog(null,"Kein Login gefunden");
+                JOptionPane.showMessageDialog(null,"Kein Login gefunden.");
             }
 
             conn.close();
@@ -146,7 +146,7 @@ public class SQL_Statements {
             st.executeUpdate(query1);
             st.executeUpdate(query2);
             conn.close();
-            JOptionPane.showMessageDialog(null,"Login erfolgreich hinzugefügt");
+            JOptionPane.showMessageDialog(null,"Login erfolgreich hinzugefügt.");
         } catch (Exception e) {
             System.err.println("Got an exception!");
             System.err.println(e.getMessage());
@@ -184,7 +184,7 @@ public class SQL_Statements {
 
 
             if(website == null){
-                JOptionPane.showMessageDialog(null,"Kein Login gefunden");
+                JOptionPane.showMessageDialog(null,"Kein Login gefunden.");
             }
         } catch (Exception e) {
             System.err.println("Got an exception!");
