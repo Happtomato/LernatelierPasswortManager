@@ -17,44 +17,47 @@ public class Gui {
     public void gui() {
         //exit loop
         do {
-            //Login window and add new user
             do {
-                //variables
-                String email;
-                String password;
+                //Login window and add new user
+                do {
 
-                //Welcome
-                Object[] welcomeButtons = {"Anmelden", "Neuer Benutzer","Beenden"};
-                int welcomeWindow = JOptionPane.showOptionDialog(null, "Willkommen beim Passwortmanager", "Willkommen", JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.PLAIN_MESSAGE, null, welcomeButtons, null);
+                    //variables
+                    String email;
+                    String password;
 
-                //get user_DBL_login
+                    //Welcome
+                    Object[] welcomeButtons = {"Anmelden", "Neuer Benutzer", "Beenden"};
+                    int welcomeWindow = JOptionPane.showOptionDialog(null, "Willkommen beim Passwortmanager", "Willkommen", JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.PLAIN_MESSAGE, null, welcomeButtons, null);
 
-                //login
-                if (welcomeWindow == JOptionPane.YES_OPTION) {
-                    email = JOptionPane.showInputDialog("Bitte geben Sie ihre Email ein");
-                    password = JOptionPane.showInputDialog("Bitte geben sie ihre Passwort ein");
+                    //get user_DBL_login
 
-                    validationUser = statements.validateUser(email, password);
-                    //get user_id
-                    idDBL = statements.getIdDBL();
-                    newUserAdded = false;
-                }
-                //add new user
-                else if (welcomeWindow == JOptionPane.NO_OPTION) {
-                    email = JOptionPane.showInputDialog("Bitte geben Sie ihre Email ein");
-                    password = JOptionPane.showInputDialog("Bitte geben sie ihre Passwort ein");
-                    statements.addNewUser(email, password);
-                    newUserAdded = true;
-                }
-                //exit program
-                else if(welcomeWindow == JOptionPane.CANCEL_OPTION){
-                    System.exit(0);
-                }
-                else{
-                    System.exit(0);
-                }
-            } while (newUserAdded);
+                    //login
+                    if (welcomeWindow == JOptionPane.YES_OPTION) {
+                        email = JOptionPane.showInputDialog("Bitte geben Sie ihre Email ein");
+                        password = JOptionPane.showInputDialog("Bitte geben sie ihre Passwort ein");
 
+                        validationUser = statements.validateUser(email, password);
+                        //get user_id
+                        idDBL = statements.getIdDBL();
+                        newUserAdded = false;
+
+                    }
+
+                    //add new user
+                    else if (welcomeWindow == JOptionPane.NO_OPTION) {
+                        email = JOptionPane.showInputDialog("Bitte geben Sie ihre Email ein");
+                        password = JOptionPane.showInputDialog("Bitte geben sie ihre Passwort ein");
+                        statements.addNewUser(email, password);
+                        newUserAdded = true;
+                    }
+                    //exit program
+                    else if (welcomeWindow == JOptionPane.CANCEL_OPTION) {
+                        System.exit(0);
+                    } else {
+                        System.exit(0);
+                    }
+                } while (newUserAdded);
+            }while(!validationUser);
             //Show and add logins
             do {
 
